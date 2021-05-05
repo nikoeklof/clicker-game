@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definetly not a cookie-clicker clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="gamecontainer">
+        <div class="cookiebox">
+            Cookies per second: <span id="cps">0</span> <br> Cookies per Click : <span id="cpc">1</span> <br>
+            <span id="score">0</span> Cookies <br><br>
+            <img class="cookie" onclick="addScore(clickingPower)" src="img/cookie.png" alt="click me">
+            <p>Click the cookie</p>
+
+        </div>
+
+        <div id="shop">
+            <img src="img/cursor.png" alt=""> <br> 
+            <button onclick="buyCursor()">Buy cursor <br>Cost: <span id="cursorCost">10</span> cookies</button>Cursors: <span id="cursors">0</span>
+            <span id="cursorUpgrade"> </span> <br> <br>
+            <img src="img/grandma.png" alt="granny"> <br>
+            <button onclick="buyGranny()">Buy granny <br>Cost: <span id="grannyCost">250</span> cookies</button>Grannys: <span id="grannys">0</span> 
+            <span id="grannyUpgrade"> </span> <br> <br>
+            <img src="img/oven.png" alt="oven"> <br> 
+            <button onclick="buyOven()"> Buy oven <br>Cost: <span id="ovenCost">5000</span> cookies</button><br> Ovens: <span id="ovens">0</span> 
+            <span id="ovenUpgrade"> </span> <br> <br>
+            <img src="img/factory.png" alt="factory">
+            <button onclick="buyFactory()">Buy factory <br>Cost: <span id="factoryCost">100000</span> cookies</button><br>Factorys: <span id="factorys">0</span>
+            <span id="factoryUpgrade"> </span> <br> <br>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

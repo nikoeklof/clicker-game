@@ -1,0 +1,40 @@
+body {
+    font-family: 'poppins';
+    height: 100vh;
+}
+
+#gamecontainer {
+    display: flex;
+    height: inherit;
+    width: 60em;
+    margin: auto;
+    align-items: center;
+}
+
+.cookiebox {
+    margin: auto;
+    width: 25%;
+    text-align: center;
+}
+
+#shop {
+    width: 15%;
+    
+    text-align: center;
+}
+
+.cookie {
+    cursor: pointer;
+    
+}
+.cookiebox img{
+    position: relative;
+    transition: all .1s ease-in-out;
+}
+.cookiebox img:hover{
+    transform: scale(1.10);
+}
+.cookiebox img:active{
+    transform: scale(0.95);
+}
+
