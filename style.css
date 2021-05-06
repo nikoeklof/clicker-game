@@ -1,6 +1,7 @@
 body {
     font-family: 'poppins';
-    height: 100vh;
+    height: 90vh;
+    background-color: rgba(128, 128, 128, 0.527);
 }
 
 #gamecontainer {
@@ -12,24 +13,39 @@ body {
 }
 
 .cookiebox {
+    padding: 2em;
     margin: auto;
     width: 25%;
     text-align: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.445);
 }
 
 #shop {
-    width: 15%;
-    
+    padding: 2em;
+    height: 75vh;
+    width: 35%;
+    min-width: fit-content;
+    position: relative;
+    transition: all .1s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
     text-align: center;
+}
+#units{
+    float: left;
+    width: 50%;
+    font-size: .8em;
 }
 
 .cookie {
     cursor: pointer;
-    
+    width: 64px;
 }
 .cookiebox img{
     position: relative;
     transition: all .1s ease-in-out;
+    border-radius: 60%;
+    box-shadow: 0px 0px 10px black;
 }
 .cookiebox img:hover{
     transform: scale(1.10);
@@ -37,4 +53,19 @@ body {
 .cookiebox img:active{
     transform: scale(0.95);
 }
-
+#upgrades{
+    overflow: hidden;
+    margin-top: 60px;
+    margin-left: 50%;
+    width: 45%;
+    text-align: center;
+    font-size: .8em;
+    
+}
+#upgrades button{
+    
+    margin-top: 30px;
+}
+header{
+    text-align: center;
+}

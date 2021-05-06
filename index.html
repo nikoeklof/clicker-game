@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <header>
+        <h1>Definetly not a cookie clicker clone <button onclick="saveGame()">Savegame</button> <button onclick="resetGame()">Reset</button></h1>
+        
+    </header>
     <div id="gamecontainer">
         <div class="cookiebox">
             Cookies per second: <span id="cps">0</span> <br> Cookies per Click : <span id="cpc">1</span> <br>
@@ -20,19 +24,29 @@
         </div>
 
         <div id="shop">
-            <img src="img/cursor.png" alt=""> <br> 
-            <button onclick="buyCursor()">Buy cursor <br>Cost: <span id="cursorCost">10</span> cookies</button>Cursors: <span id="cursors">0</span>
-            <span id="cursorUpgrade"> </span> <br> <br>
-            <img src="img/grandma.png" alt="granny"> <br>
-            <button onclick="buyGranny()">Buy granny <br>Cost: <span id="grannyCost">250</span> cookies</button>Grannys: <span id="grannys">0</span> 
-            <span id="grannyUpgrade"> </span> <br> <br>
-            <img src="img/oven.png" alt="oven"> <br> 
-            <button onclick="buyOven()"> Buy oven <br>Cost: <span id="ovenCost">5000</span> cookies</button><br> Ovens: <span id="ovens">0</span> 
-            <span id="ovenUpgrade"> </span> <br> <br>
-            <img src="img/factory.png" alt="factory">
-            <button onclick="buyFactory()">Buy factory <br>Cost: <span id="factoryCost">100000</span> cookies</button><br>Factorys: <span id="factorys">0</span>
-            <span id="factoryUpgrade"> </span> <br> <br>
+            <h2>Shop</h2>
+            <div id="units">
+                <img src="img/cursor.png" alt=""> <br>
+                <button onclick="buyCursor()">Buy cursor <br>Cost: <span id="cursorCost">15</span> cookies</button><br> Cursors: <span id="cursors">0</span>
+                <br>
+                <img src="img/grandma.png" alt="granny"> <br>
+                <button onclick="buyGranny()">Buy granny <br>Cost: <span id="grannyCost">100</span> cookies</button><br> Grannys: <span id="grannys">0</span>
+                <br>
+                <img src="img/oven.png" alt="oven"> <br>
+                <button onclick="buyOven()"> Buy oven <br>Cost: <span id="ovenCost">1100</span> cookies</button><br> Ovens: <span id="ovens">0</span>
+                <br>
+                <img src="img/factory.png" alt="factory">
+                <button onclick="buyFactory()">Buy factory <br>Cost: <span id="factoryCost">12000</span> cookies</button><br>Factorys: <span id="factorys">0</span>
+                <br>
+
+            </div>
+            <div id="upgrades">
+
+
+
+            </div>
         </div>
+
     </div>
 </body>
 <script src="main.js"></script>
