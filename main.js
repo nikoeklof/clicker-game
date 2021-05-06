@@ -205,20 +205,20 @@ function loadGame() {
 window.onload = function() {
     loadGame();
     if (cursorUpgrades[0] >= 0 && cursor[0] >= 15) {
-        document.getElementById('upgrades').innerHTML += '<button onclick="cursorUpgrade()">Upgrade cursors: <br>Cost: <span id="cursorUpgradeCost">100</span> </button>' +
+        document.getElementById('upgrades').innerHTML += '<button onclick="cursorUpgrade()">Upgrade cursors: <br>Cost: <span id="cursorUpgradeCost">100</span> </button>' + '<br>' +
             '<span>Makes cursors and mouseclicks twice as efficient</span>'
     }
     if (grannyUpgrades[0] >= 0 && granny[0] >= 15) {
-        document.getElementById('upgrades').innerHTML += '<button onclick="grannyUpgrade()">Upgrade grannies: <br>Cost: <span id="grannyUpgradeCost">5000</span> </button>' +
-            '<span>Makes grannies twice as efficient</span>'
+        document.getElementById('upgrades').innerHTML += '<button onclick="grannyUpgrade()">Upgrade grannies: <br>Cost: <span id="grannyUpgradeCost">5000</span> </button>' + '<br>' +
+        '<span>Makes grannies twice as efficient</span>' + '<br>'
     }
     if (ovenUpgrades[0] >= 0 && oven[0] >= 15) {
-        document.getElementById('upgrades').innerHTML += '<button onclick="ovenUpgrade()">Upgrade ovens: <br>Cost: <span id="ovenUpgradeCost">11000</span> </button>' +
-            '<span>Makes ovens twice as efficient</span>'
+        document.getElementById('upgrades').innerHTML += '<button onclick="ovenUpgrade()">Upgrade ovens: <br>Cost: <span id="ovenUpgradeCost">11000</span> </button>' + '<br>' +
+        '<span>Makes ovens twice as efficient</span>'
     }
     if (factoryUpgrades[0] >= 0 && factory[0] >= 15) {
         document.getElementById('upgrades').innerHTML += '<button onclick="factoryUpgrade()">Upgrade factories: <br>Cost: <span id="factoryUpgradeCost">120000</span> </button>' +
-            '<span>Makes factories twice as efficient</span>'
+        '<br>' + '<span>Makes factories twice as efficient</span>'
     }
 
     document.getElementById('score').innerHTML = score.toFixed(2)

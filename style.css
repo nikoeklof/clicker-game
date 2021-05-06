@@ -5,24 +5,27 @@ body {
 }
 
 #gamecontainer {
-    display: flex;
+    display: table;
     height: inherit;
     width: 60em;
     margin: auto;
-    align-items: center;
 }
 
 .cookiebox {
+    
     padding: 2em;
-    margin: auto;
+    margin-top: 15em;
+    margin-right: 0px;
     width: 25%;
     text-align: center;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.445);
 }
 
 #shop {
+    margin-top: -30em;
+    float: right;
     padding: 2em;
-    height: 75vh;
+    height: 65vh;
     width: 35%;
     min-width: fit-content;
     position: relative;
@@ -30,8 +33,10 @@ body {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
     text-align: center;
+    overflow-y: scroll;
 }
-#units{
+
+#units {
     float: left;
     width: 50%;
     font-size: .8em;
@@ -41,31 +46,34 @@ body {
     cursor: pointer;
     width: 64px;
 }
-.cookiebox img{
+
+.cookiebox img {
     position: relative;
     transition: all .1s ease-in-out;
     border-radius: 60%;
     box-shadow: 0px 0px 10px black;
 }
-.cookiebox img:hover{
+
+.cookiebox img:hover {
     transform: scale(1.10);
 }
-.cookiebox img:active{
+
+.cookiebox img:active {
     transform: scale(0.95);
 }
-#upgrades{
-    overflow: hidden;
-    margin-top: 60px;
+
+#upgrades {
+    margin-top: 6px;
     margin-left: 50%;
     width: 45%;
     text-align: center;
     font-size: .8em;
-    
 }
-#upgrades button{
-    
-    margin-top: 30px;
+
+#upgrades button {
+    margin-top: 60px;
 }
-header{
+
+header {
     text-align: center;
 }

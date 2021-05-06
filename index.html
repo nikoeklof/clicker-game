@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Definetly not a cookie-clicker clone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     </header>
     <div id="gamecontainer">
         <div class="cookiebox">
-            Cookies per second: <span id="cps">0</span> <br> Cookies per Click : <span id="cpc">1</span> <br>
+            Cookies per second: <span id="cps">0</span> <br> Cookies per Click: <span id="cpc">1</span> <br>
             <span id="score">0</span> Cookies <br><br>
             <img class="cookie" onclick="addScore(clickingPower)" src="img/cookie.png" alt="click me">
             <p>Click the cookie</p>
@@ -30,13 +31,14 @@
                 <button onclick="buyCursor()">Buy cursor <br>Cost: <span id="cursorCost">15</span> cookies</button><br> Cursors: <span id="cursors">0</span>
                 <br>
                 <img src="img/grandma.png" alt="granny"> <br>
-                <button onclick="buyGranny()">Buy granny <br>Cost: <span id="grannyCost">100</span> cookies</button><br> Grannys: <span id="grannys">0</span>
+                <button onclick="buyGranny()">Buy granny <br>Cost: <span id="grannyCost">100</span> cookies</button><br> Grannies: <span id="grannys">0</span>
                 <br>
                 <img src="img/oven.png" alt="oven"> <br>
                 <button onclick="buyOven()"> Buy oven <br>Cost: <span id="ovenCost">1100</span> cookies</button><br> Ovens: <span id="ovens">0</span>
                 <br>
                 <img src="img/factory.png" alt="factory">
-                <button onclick="buyFactory()">Buy factory <br>Cost: <span id="factoryCost">12000</span> cookies</button><br>Factorys: <span id="factorys">0</span>
+                <br>
+                <button onclick="buyFactory()">Buy factory <br>Cost: <span id="factoryCost">12000</span> cookies</button><br>Factories: <span id="factorys">0</span>
                 <br>
 
             </div>
