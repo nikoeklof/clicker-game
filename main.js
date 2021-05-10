@@ -7,11 +7,13 @@ var cursor = [0, 0.1, 15]
 var oven = [0, 8, 1100]
 var granny = [0, 1, 100]
 var factory = [0, 47, 12000]
+var shipment = [0, 100, 250000]
     //upgrades, index 0 is quantity, 1 is multiplier, 2 is cost
 var cursorUpgrades = [0, 1, 100]
 var grannyUpgrades = [0, 1, 5000]
 var ovenUpgrades = [0, 1, 11000]
 var factoryUpgrades = [0, 1, 120000]
+var shipmentUpgrades = [0, 1, 2500000]
 
 
 function addScore(amount) {
@@ -75,7 +77,7 @@ function buyOven() {
         document.getElementById('cpc').innerHTML = clickingPower.toFixed(2)
         if (ovenUpgrades[0] == 0 && oven[0] == 15 && i == 0) {
             document.getElementById('upgrades').innerHTML += '<button onclick="ovenUpgrade()">Upgrade ovens: <br>Cost: <span id="ovenUpgradeCost">11000</span> </button>' +
-                '<span>Makes ovens twice as efficient</span>'
+                '<br> <span>Makes ovens twice as efficient</span>'
             i = 1
         }
     }
@@ -104,13 +106,38 @@ function buyFactory() {
 
 }
 
+function buyShipment() {
+    let i = 0
+    if (score > shipment[2]) {
+        scorePerSecond -= (shipment[1] * shipment[0])
+        score = score - shipment[2]
+        shipment[0] += 1
+        shipment[1] = shipment[1] * 2
+        shipment[2] = Math.round(shipment[2] * 3.33)
+        shipment[1] = shipment[1] * 2
+        scorePerSecond += (shipment[1] * shipment[0])
+        document.getElementById('shipmentCost').innerHTML = shipment[2].toFixed(2)
+        document.getElementById('shipments').innerHTML = shipment[0]
+        document.getElementById('score').innerHTML = score.toFixed(2)
+        document.getElementById('cps').innerHTML = scorePerSecond.toFixed(2)
+        document.getElementById('cpc').innerHTML = clickingPower.toFixed(2)
+        if (shipmentUpgrades[0] == 0 && shipment[0] == 15 && i == 0) {
+            document.getElementById('upgrades').innerHTML += '<button onclick="shipmentUpgrade()">Upgrade shipments: <br>Cost: <span id="shipmentUpgradeCost">2500000</span> </button>' +
+                '<span>Makes shipments twice as efficient</span>'
+            i = 1
+        }
+
+    }
+
+}
+
 function cursorUpgrade() {
     if (score > cursorUpgrades[2]) {
         scorePerSecond -= (cursor[1] * cursor[0])
         score = score - cursorUpgrades[2]
         cursorUpgrades[0] += 1
         cursorUpgrades[1] = cursorUpgrades[1] * 2
-        cursorUpgrades[2] = cursorUpgrades[2] * 5
+        cursorUpgrades[2] = Math.round(cursorUpgrades[2] * 3.33)
         clickingPower = clickingPower * 2
         cursor[1] = cursor[1] + cursor[1]
         scorePerSecond += cursor[1] * cursor[0]
@@ -127,7 +154,7 @@ function grannyUpgrade() {
         score = score - grannyUpgrades[2]
         grannyUpgrades[0] += 1
         grannyUpgrades[1] = grannyUpgrades[1] * 2
-        grannyUpgrades[2] = grannyUpgrades[2] * 5
+        grannyUpgrades[2] = Math.round(grannyUpgrades[2] * 3.33)
         granny[1] = granny[1] + granny[1]
         scorePerSecond += granny[1] * granny[0]
         document.getElementById('grannyUpgradeCost').innerHTML = grannyUpgrades[2].toFixed(2)
@@ -143,7 +170,7 @@ function ovenUpgrade() {
         score = score - ovenUpgrades[2]
         ovenUpgrades[0] += 1
         ovenUpgrades[1] = ovenUpgrades[1] * 2
-        ovenUpgrades[2] = ovenUpgrades[2] * 5
+        ovenUpgrades[2] = Math.round(ovenUpgrades[2] * 3.33)
         oven[1] = oven[1] * 2
         scorePerSecond += (oven[1] * oven[0])
         document.getElementById('ovenUpgradeCost').innerHTML = ovenUpgrades[2].toFixed(2)
@@ -153,21 +180,22 @@ function ovenUpgrade() {
     }
 }
 
-function factoryUpgrade() {
-    if (score > factoryUpgrades[2]) {
-        scorePerSecond -= (factory[1] * factory[0])
-        score = score - factoryUpgrades[2]
-        factoryUpgrades[0] += 1
-        factoryUpgrades[1] = factoryUpgrades[1] * 2
-        factoryUpgrades[2] = factoryUpgrades[2] * 5
-        factory[1] = factory[1] * 2
-        scorePerSecond += (factory[1] * factory[0])
-        document.getElementById('factoryUpgradeCost').innerHTML = factoryUpgrades[2].toFixed(2)
+function shipmentUpgrade() {
+    if (score > shipmentUpgrades[2]) {
+        scorePerSecond -= (shipment[1] * shipment[0])
+        score = score - shipmentUpgrades[2]
+        shipmentUpgrades[0] += 1
+        shipmentUpgrades[1] = shipmentUpgrades[1] * 2
+        shipmentUpgrades[2] = Math.round(shipmentUpgrades[2] * 3.33)
+        shipment[1] = shipment[1] * 2
+        scorePerSecond += (shipment[1] * shipment[0])
+        document.getElementById('shipmentUpgradesCost').innerHTML = shipmentUpgrades[2].toFixed(2)
         document.getElementById('score').innerHTML = score.toFixed(2)
         document.getElementById('cps').innerHTML = scorePerSecond.toFixed(2)
         document.getElementById('cpc').innerHTML = clickingPower.toFixed(2)
     }
 }
+
 
 function saveGame() {
     var gameSave = {
@@ -210,15 +238,19 @@ window.onload = function() {
     }
     if (grannyUpgrades[0] >= 0 && granny[0] >= 15) {
         document.getElementById('upgrades').innerHTML += '<button onclick="grannyUpgrade()">Upgrade grannies: <br>Cost: <span id="grannyUpgradeCost">5000</span> </button>' + '<br>' +
-        '<span>Makes grannies twice as efficient</span>' + '<br>'
+            '<span>Makes grannies twice as efficient</span>' + '<br>'
     }
     if (ovenUpgrades[0] >= 0 && oven[0] >= 15) {
         document.getElementById('upgrades').innerHTML += '<button onclick="ovenUpgrade()">Upgrade ovens: <br>Cost: <span id="ovenUpgradeCost">11000</span> </button>' + '<br>' +
-        '<span>Makes ovens twice as efficient</span>'
+            '<span>Makes ovens twice as efficient</span>'
     }
     if (factoryUpgrades[0] >= 0 && factory[0] >= 15) {
         document.getElementById('upgrades').innerHTML += '<button onclick="factoryUpgrade()">Upgrade factories: <br>Cost: <span id="factoryUpgradeCost">120000</span> </button>' +
-        '<br>' + '<span>Makes factories twice as efficient</span>'
+            '<br>' + '<span>Makes factories twice as efficient</span>'
+    }
+    if (factoryUpgrades[0] >= 0 && shipment[0] >= 15) {
+        document.getElementById('upgrades').innerHTML += '<button onclick="shipmentUpgrade()">Upgrade shipments: <br>Cost: <span id="shipmentUpgradeCost">250000</span> </button>' +
+            '<br>' + '<span>Makes shipments twice as efficient</span>'
     }
 
     document.getElementById('score').innerHTML = score.toFixed(2)
@@ -230,6 +262,13 @@ window.onload = function() {
     document.getElementById('ovens').innerHTML = oven[0]
     document.getElementById('factoryCost').innerHTML = factory[2]
     document.getElementById('factorys').innerHTML = factory[0]
+    document.getElementById('shipmentCost').innerHTML = shipment[2]
+    document.getElementById('shipments').innerHTML = shipment[0]
+    document.getElementById('cursorUpgradeCost').innerHTML = cursorUpgrades[2].toFixed(2)
+    document.getElementById('grannyUpgradeCost').innerHTML = grannyUpgrades[2].toFixed(2)
+    document.getElementById('ovenUpgradeCost').innerHTML = ovenUpgrades[2].toFixed(2)
+    document.getElementById('factoryUpgradeCost').innerHTML = factoryUpgrades[2].toFixed(2)
+    document.getElementById('factoryUpgradeCost').innerHTML = shipmentUpgrades[2].toFixed(2)
     document.getElementById('cps').innerHTML = scorePerSecond.toFixed(2)
     document.getElementById('cpc').innerHTML = clickingPower.toFixed(2)
 
@@ -252,7 +291,7 @@ setInterval(function() {
     score = score + scorePerSecond
     document.getElementById('score').innerHTML = score.toFixed(2)
 
-}, 500)
+}, 1000)
 
 document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && event.which == 83) {
