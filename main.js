@@ -207,10 +207,13 @@ function saveGame() {
         granny: granny,
         oven: oven,
         factory: factory,
+        shipment: shipment,
         cursorUpgrades: cursorUpgrades,
         grannyUpgrades: grannyUpgrades,
         ovenUpgrades: ovenUpgrades,
-        factoryUpgrades: factoryUpgrades
+        factoryUpgrades: factoryUpgrades,
+        shipmentUpgrades: shipmentUpgrades
+        
     };
     localStorage.setItem('gameSave', JSON.stringify(gameSave));
 }
@@ -225,10 +228,13 @@ function loadGame() {
     if (typeof savedGame.granny !== "undefined") granny = savedGame.granny
     if (typeof savedGame.oven !== "undefined") oven = savedGame.oven
     if (typeof savedGame.factory !== "undefined") factory = savedGame.factory
+    if (typeof savedGame.shipment !== "undefined") shipment = savedGame.shipment
     if (typeof savedGame.cursorUpgrades !== "undefined") cursorUpgrades = savedGame.cursorUpgrades
     if (typeof savedGame.grannyUpgrades !== "undefined") grannyUpgrades = savedGame.grannyUpgrades
     if (typeof savedGame.ovenUpgrades !== "undefined") ovenUpgrades = savedGame.ovenUpgrades
     if (typeof savedGame.factoryUpgrades !== "undefined") factoryUpgrades = savedGame.factoryUpgrades
+    if (typeof savedGame.shipmentUpgrades !== "undefined") shipmentUpgrades = savedGame.shipmentUpgrades
+
 }
 window.onload = function() {
     loadGame();
@@ -248,11 +254,11 @@ window.onload = function() {
         document.getElementById('upgrades').innerHTML += '<button onclick="factoryUpgrade()">Upgrade factories: <br>Cost: <span id="factoryUpgradeCost">120000</span> </button>' +
             '<br>' + '<span>Makes factories twice as efficient</span>'
     }
-    if (factoryUpgrades[0] >= 0 && shipment[0] >= 15) {
+    if (shipmentUpgrades[0] >= 0 && shipment[0] >= 15) {
         document.getElementById('upgrades').innerHTML += '<button onclick="shipmentUpgrade()">Upgrade shipments: <br>Cost: <span id="shipmentUpgradeCost">250000</span> </button>' +
             '<br>' + '<span>Makes shipments twice as efficient</span>'
     }
-
+   
     document.getElementById('score').innerHTML = score.toFixed(2)
     document.getElementById('cursorCost').innerHTML = cursor[2]
     document.getElementById('cursors').innerHTML = cursor[0]
@@ -268,7 +274,7 @@ window.onload = function() {
     document.getElementById('grannyUpgradeCost').innerHTML = grannyUpgrades[2].toFixed(2)
     document.getElementById('ovenUpgradeCost').innerHTML = ovenUpgrades[2].toFixed(2)
     document.getElementById('factoryUpgradeCost').innerHTML = factoryUpgrades[2].toFixed(2)
-    document.getElementById('factoryUpgradeCost').innerHTML = shipmentUpgrades[2].toFixed(2)
+    document.getElementById('shipmentUpgradeCost').innerHTML = shipmentUpgrades[2].toFixed(2)
     document.getElementById('cps').innerHTML = scorePerSecond.toFixed(2)
     document.getElementById('cpc').innerHTML = clickingPower.toFixed(2)
 
